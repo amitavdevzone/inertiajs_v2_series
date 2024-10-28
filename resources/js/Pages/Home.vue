@@ -2,6 +2,14 @@
 import { Link } from '@inertiajs/vue3'
 </script>
 
+<script>
+import Layout from '../Layout.vue';
+import NestedLayout from '../NestedLayout.vue';
+export default {
+  layout: [Layout, NestedLayout]
+}
+</script>
+
 <template>
   <div>
     <p>This content is coming from Home</p>
