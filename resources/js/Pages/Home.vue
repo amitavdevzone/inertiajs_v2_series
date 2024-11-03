@@ -17,6 +17,8 @@ export default {
       <Link href="/profile" :data="{ 'search': 'vuejs' }">Profile for Vuejs</Link>
       <br>
       <Link href="/profile" :data="{ 'search': 'inertiajs' }">Profile for Inertiajs</Link>
+      <br>
+      <Link href="/test" :data="{ 'search': 'inertiajs' }" method="POST">Send data</Link>
     </p>
   </div>
 </template>
