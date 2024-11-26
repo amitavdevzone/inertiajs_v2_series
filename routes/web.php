@@ -17,8 +17,12 @@ Route::post('login', function(Request $request) {
 
     return to_route('home');
 });
-Route::post('/test', function (Request $request) {
+Route::post('file-upload', function (Request $request) {
     logger($request->all());
-    // return to_route('profile');
-    return inertia()->location('https://www.amitavroy.com');
+
+    if ($request->hasFile('pic')) {
+        $request->pic->store('images');
+    }
+
+    return to_route('profile');
 });

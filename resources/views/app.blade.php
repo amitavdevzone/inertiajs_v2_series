@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-    <title>{{ $page_title }} - Inertia app</title>
+    <title>Inertia app</title>
     @vite('resources/js/app.js')
     @vite('resources/css/app.css')
     @inertiaHead
