@@ -1,3 +1,4 @@
+import 'flowbite';
 import './bootstrap';
 
 import { createApp, h } from 'vue'

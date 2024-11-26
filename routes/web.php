@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -15,7 +17,13 @@ Route::post('login', function(Request $request) {
         'password' => ['required', 'min:6'],
     ]);
 
-    return to_route('home');
+    if ($user = User::where('email', $postData['email'])->first()) {
+        Auth::attempt(['email' => $postData['email'], 'password' => $postData['password']]);
+
+        return to_route('home');
+    }
+
+    return redirect()->back();
 });
 Route::post('file-upload', function (Request $request) {
     logger($request->all());
