@@ -1,5 +1,9 @@
 <script setup>
-import { Link } from '@inertiajs/vue3'
+import { Link, usePage } from '@inertiajs/vue3'
+import { computed } from 'vue'
+
+const page = usePage()
+const user = computed(() => page.props.auth.user)
 </script>
 
 <script>
@@ -20,5 +24,9 @@ export default {
       <br>
       <Link href="/test" :data="{ 'search': 'inertiajs' }" method="POST">Send data</Link>
     </p>
+    <div>
+      <p>User: {{ user?.name || '' }}</p>
+      <p>Email: {{ user?.email || '' }}</p>
+    </div>
   </div>
 </template>
